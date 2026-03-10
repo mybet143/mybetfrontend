@@ -188,12 +188,12 @@ return ( <div className="relative w-full  overflow-hidden">
       {/* BADGES */}
       <div className="mt-6 flex justify-center lg:justify-start gap-3 flex-wrap max-lg:mt-3">
 
-        <span className="bg-yellow-500/10 backdrop-blur-md border border-yellow-400/30 px-4 py-1 rounded-full text-sm text-white">
-          ⚡ Play Smart
+        <span className="bg-yellow-500/10 backdrop-blur-md border border-yellow-400/30 px-4 py-1 rounded-full text-base text-white animate-pulse">
+           Play Smart
         </span>
 
-        <span className="bg-green-500/10 backdrop-blur-md border border-green-400/30 px-4 py-1 rounded-full text-sm text-white animate-pulse">
-          💸  Instant Withdraw
+        <span className="bg-green-500/10 backdrop-blur-md border border-green-400/30 px-4 py-1 rounded-full text-base text-white animate-pulse">
+          Instant Withdraw
         </span>
 
       </div>
@@ -248,7 +248,7 @@ return ( <div className="relative w-full  overflow-hidden">
           <div className="h-8 w-[2px] bg-white/50"></div>
 
           <span className="text-white text-lg font-semibold tracking-wide max-md:text-sm">
-            Download Now
+            Download App Now
           </span>
 
         </div>

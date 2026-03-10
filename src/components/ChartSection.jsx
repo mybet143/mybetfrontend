@@ -23,28 +23,6 @@ const sattaJodi = [
 "Morning Syndicate"
 ];
 
-const sattaPanel = [
-"Kalyan",
-"Main Bazar",
-"Main Ratan",
-"Main Bombay",
-"Time Bazar",
-"Sridevi Satta",
-"Sridevi Night",
-"Kalyan Night",
-"Kalyan Morning",
-"Madhur Morning",
-"Milan Day",
-"Milan Night",
-"Madhur Day",
-"Madhur Night",
-"Supreme Day",
-"Supreme Night",
-"Rajdhani Day",
-"Rajdhani Night",
-"Syndicate Night",
-"Morning Syndicate"
-];
 
 const otherJodi = [
 "Dabra",
@@ -68,7 +46,7 @@ const otherJodi = [
 const Row = ({name,type}) => (
 <div
 onClick={() => onOpenChart(name,type.includes("Panel") ? "panel":"jodi")}
-className="bg-gray-200 text-blue-700 font-semibold text-center py-3 cursor-pointer border-2 border-red-500 hover:bg-gray-300 transition" id="chart"
+className="bg-[#111827] text-yellow-500 font-semibold text-center py-3 cursor-pointer border-2 border-[#1f2937] hover:bg-gray-300 transition" id="chart"
 >
 {name} {type}
 </div>

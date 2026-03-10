@@ -1,9 +1,10 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { FaTelegramPlane, FaWhatsapp, FaFacebook, FaInstagram, FaYoutube } from "react-icons/fa";
+import { FaTelegramPlane, FaWhatsapp, FaFacebook, FaInstagram, FaYoutube,FaLock, FaShieldAlt  } from "react-icons/fa";
+import { SiLetsencrypt } from "react-icons/si";
 
 const Footer = () => {
-return ( <footer className="bg-[#020617] text-gray-300 pt-16 pb-10 px-6 border-t border-white/10 max-md:pt-8">
+return ( <footer className="bg-[#020617] text-gray-300  pb-10 px-6 border-t border-white/10 md:pt-8">
 
 
   <div className="max-w-7xl mx-auto grid md:grid-cols-4 gap-12">
@@ -14,10 +15,10 @@ return ( <footer className="bg-[#020617] text-gray-300 pt-16 pb-10 px-6 border-t
       <img
         src="/mybet.png"
         alt="MyBet Logo"
-        className="w-44 mb-4 max-md:hidden"
+        className="w-44 mb-4 relative right-[2.5rem]"
       />
 
-      <h1 className="text-white text-xl font-bold mb-3 max-md:block hidden">
+      <h1 className="text-white text-xl font-bold mb-3 ">
         My Bet
       </h1>
 
@@ -93,7 +94,8 @@ return ( <footer className="bg-[#020617] text-gray-300 pt-16 pb-10 px-6 border-t
     <div>
 
       <h3 className="text-white font-semibold mb-6 text-lg">
-        Community
+Customer support 
+
       </h3>
 
       <div className="flex flex-col gap-4">
@@ -155,29 +157,37 @@ return ( <footer className="bg-[#020617] text-gray-300 pt-16 pb-10 px-6 border-t
 
   {/* SECURITY BADGES */}
 
-  <div className="mt-16 border-t border-white/10 pt-10 text-center">
 
-    <h4 className="text-white font-semibold mb-5">
-      Security & Certificates
-    </h4>
 
-    <div className="flex justify-center gap-6 flex-wrap">
+<div className="mt-8 border-t border-white/10 pt-10 text-center">
 
-      <div className="bg-[#0b1220] border border-white/10 px-5 py-3 rounded-lg hover:border-yellow-400 transition">
-        DigiCert Secure
-      </div>
+  <h4 className="text-white font-semibold mb-5">
+    Security & Certificates
+  </h4>
 
-      <div className="bg-[#0b1220] border border-white/10 px-5 py-3 rounded-lg hover:border-yellow-400 transition">
-        Gaming Certified
-      </div>
+  <div className="flex justify-center gap-6 flex-wrap">
 
-      <div className="bg-[#0b1220] border border-white/10 px-5 py-3 rounded-lg hover:border-yellow-400 transition">
-        SSL Secured
-      </div>
+    {/* DigiCert */}
+    <div className="bg-[#0b1220] border border-white/10 px-5 py-3 rounded-lg hover:border-yellow-400 transition flex items-center gap-3">
+      <FaShieldAlt className="text-yellow-400 text-lg"/>
+      DigiCert Secure
+    </div>
 
+    {/* Gaming Certified */}
+    <div className="bg-[#0b1220] border border-white/10 px-5 py-3 rounded-lg hover:border-yellow-400 transition flex items-center gap-3">
+      <FaShieldAlt className="text-green-400 text-lg"/>
+      Gaming Certified
+    </div>
+
+    {/* SSL */}
+    <div className="bg-[#0b1220] border border-white/10 px-5 py-3 rounded-lg hover:border-yellow-400 transition flex items-center gap-3">
+      <FaLock className="text-blue-400 text-lg"/>
+      SSL Secured
     </div>
 
   </div>
+
+</div>
 
   {/* DISCLAIMER */}
 

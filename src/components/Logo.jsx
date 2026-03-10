@@ -20,7 +20,7 @@ return (
 <div className="text-center mb-10">
 
 <h2 className="text-white text-2xl md:text-3xl font-semibold">
-Trusted Payout Partners
+Trusted Payment Partner
 </h2>
 
 <div className="h-[3px] w-32 mx-auto mt-3 bg-gradient-to-r from-yellow-400 via-yellow-500 to-transparent rounded-full"></div>
