@@ -3,9 +3,9 @@ import ChartSection from "../components/ChartSection";
 import JodiChart from "../components/JodiChart";
 import PanelChart from "../components/PanelChart";
 
-// const API = import.meta.env.VITE_API_URL;
+const API = import.meta.env.VITE_API_URL;
 
-const API = "http://localhost:8000";
+// const API = "http://localhost:8000";
 
 
 function getCurrentTime() {
