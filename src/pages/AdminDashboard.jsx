@@ -14,6 +14,8 @@ function AdminDashboard() {
 
 const API = import.meta.env.VITE_API_URL;
 
+// const API = "http://localhost:8000";
+
   // ==============================
   // FETCH ALL MARKETS
   // ==============================

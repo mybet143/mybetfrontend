@@ -8,10 +8,12 @@ function AdminLogin() {
 
 const API = import.meta.env.VITE_API_URL;
 
+// const API = "http://localhost:8000";
+
   const handleLogin = async (e) => {
     e.preventDefault();
 
-       const res = await fetch(` ${API}/api/admin/login `, {
+       const res = await fetch(`${API}/api/admin/login`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

@@ -19,6 +19,8 @@ function getCurrentTime() {
   })
 }
 
+
+
 function App() {
 
 const [markets,setMarkets] = useState([])
@@ -42,7 +44,9 @@ const fetchMarket = async ()=>{
 
 try{
 
-const res = await fetch(`${API}/api/matka`)
+const res = await fetch(`${API}/api/matka`,{
+cache:"no-store"
+})
 const data = await res.json()
 
 if(data.success){
@@ -92,8 +96,11 @@ setLoading(false)
 
 useEffect(()=>{
 
+// instant load
 fetchMarket()
-const interval=setInterval(fetchMarket,30000)
+
+// update every 2 minutes
+const interval=setInterval(fetchMarket,120000)
 
 return ()=>clearInterval(interval)
 
@@ -197,17 +204,14 @@ return(
 
 <div className="max-w-5xl mx-auto mb-10">
 
-<div className="bg-gradient-to-r from-gray-600 via-gray-500 to-gray-400 text-center py-3 rounded-xl mb-5 font-bold">
-⏳ UPCOMING RESULT
+<div className="bg-gradient-to-r from-gray-600 via-gray-500 to-gray-400 text-center py-3 rounded-xl mb-5 font-bold animate-pulse">
+⏳ PENDING RESULT
 </div>
 
 {upcomingMarkets.length === 0 ? (
 
-<div className="text-center py-8 bg-[#111827] rounded-lg border border-gray-700 text-gray-400 text-lg">
-✅ All Market Results Declared
-
-<br/>
-No Upcoming Results
+<div className="text-center py-8 bg-[#111827] rounded-lg border border-gray-700 text-gray-400 text-lg animate-pulse">
+  No Pending Results
 </div>
 
 ) : (
@@ -395,6 +399,7 @@ const parts = result.split("-");
 const isUpcoming = !result || result === "" || result.includes("Loading")
 const isLive = parts.length === 2
 const isPublished = parts.length === 3
+const [btnLoading,setBtnLoading] = useState(null)
 
 const getResultTime = () => {
 
@@ -429,25 +434,48 @@ return (
 <div className="relative bg-[#111827] border border-gray-700 rounded-lg mb-4 overflow-hidden shadow-lg hover:shadow-yellow-500/20 transition">
 
 {/* JODI BUTTON */}
+{/* JODI BUTTON */}
 {!isLive && (
 <div
-onClick={() => fetchChart(market.marketName,"jodi")}
-className="absolute left-2 top-1/2 -translate-y-1/2 bg-red-600 cursor-pointer text-white text-xs px-2 py-1 rounded-md font-semibold"
+onClick={async () => {
+  setBtnLoading("jodi")
+  await fetchChart(market.marketName,"jodi")
+  setBtnLoading(null)
+}}
+className={`absolute left-2 top-1/2 -translate-y-1/2 px-2 py-1 rounded-md text-xs font-semibold flex items-center gap-1
+${btnLoading ? "bg-gray-600 cursor-not-allowed" : "bg-red-600 cursor-pointer"}
+`}
 >
-Jodi
+
+{btnLoading === "jodi" ? (
+<span className="animate-spin">⏳</span>
+) : (
+"Jodi"
+)}
+
 </div>
 )}
 
 {/* PANEL BUTTON */}
+{/* PANEL BUTTON */}
 {!isLive && (
 <div
-onClick={() => fetchChart(market.marketName,"panel")}
-className="absolute right-2 top-1/2 -translate-y-1/2 bg-red-600 cursor-pointer text-white text-xs px-2 py-1 rounded-md font-semibold"
+onClick={async () => {
+  setBtnLoading("panel")
+  await fetchChart(market.marketName,"panel")
+  setBtnLoading(null)
+}}
+className="absolute right-2 top-1/2 -translate-y-1/2 bg-red-600 cursor-pointer text-white text-xs px-2 py-1 rounded-md font-semibold flex items-center gap-1"
 >
-Panel
-</div>
+
+{btnLoading === "panel" ? (
+<span className="animate-spin">⏳</span>
+) : (
+"Panel"
 )}
 
+</div>
+)}
 {/* HEADER */}
 <div className="relative px-4 py-4 bg-[#1f2937]">
 
