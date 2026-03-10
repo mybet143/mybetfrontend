@@ -3,9 +3,21 @@ import ChartSection from "../components/ChartSection";
 import JodiChart from "../components/JodiChart";
 import PanelChart from "../components/PanelChart";
 
-const API = import.meta.env.VITE_API_URL;
+// const API = import.meta.env.VITE_API_URL;
 
-// const API = "http://localhost:8000";
+const API = "http://localhost:8000";
+
+
+function getCurrentTime() {
+  const now = new Date()
+
+  return now.toLocaleTimeString("en-US", {
+    hour: "numeric",
+    minute: "2-digit",
+    second: "2-digit",
+    hour12: true
+  })
+}
 
 function App() {
 
@@ -13,7 +25,7 @@ const [markets,setMarkets] = useState([])
 const [filteredMarkets,setFilteredMarkets] = useState([])
 const [search,setSearch] = useState("")
 const [loading,setLoading] = useState(true)
-
+const [lastUpdated,setLastUpdated] = useState("")
 const [showModal,setShowModal] = useState(false)
 const [selectedMarket,setSelectedMarket] = useState(null)
 const [chartData,setChartData] = useState([])
@@ -34,6 +46,15 @@ const res = await fetch(`${API}/api/matka`)
 const data = await res.json()
 
 if(data.success){
+
+const now = new Date()
+
+const formatted =
+now.toLocaleDateString() +
+" " +
+now.toLocaleTimeString([], {hour:"2-digit",minute:"2-digit"})
+
+setLastUpdated(formatted)
 
 const newBlink={}
 
@@ -94,14 +115,20 @@ setFilteredMarkets(filtered)
 
 /* ================= SPLIT LIVE / PUBLISHED ================= */
 
-const liveMarkets=filteredMarkets.filter(m=>{
-if(!m.marketResult) return true
-return m.marketResult.split("-").length<3
+/* ================= SPLIT 3 PHASES ================= */
+
+const upcomingMarkets = filteredMarkets.filter(m=>{
+return !m.marketResult || m.marketResult === "" || m.marketResult.includes("Loading")
 })
 
-const publishedMarkets=filteredMarkets.filter(m=>{
+const liveMarkets = filteredMarkets.filter(m=>{
 if(!m.marketResult) return false
-return m.marketResult.split("-").length===3
+return m.marketResult.split("-").length === 2
+})
+
+const publishedMarkets = filteredMarkets.filter(m=>{
+if(!m.marketResult) return false
+return m.marketResult.split("-").length === 3
 })
 
 
@@ -144,25 +171,14 @@ setChartLoading(false)
 }
 
 
+
+
 /* ================= UI ================= */
 
 return(
 
 <div className="min-h-screen bg-[#020617] text-white p-5 relative overflow-hidden" id="market">
 
-{/* SEARCH */}
-
-{/* <div className="max-w-3xl mx-auto mb-8">
-
-<input
-type="text"
-placeholder="🔍 Search Market..."
-value={search}
-onChange={(e)=>setSearch(e.target.value)}
-className="w-full p-4 rounded-xl bg-[#0f172a] border border-gray-700"
-/>
-
-</div> */}
 
 
 {/* LOADING */}
@@ -177,12 +193,44 @@ className="w-full p-4 rounded-xl bg-[#0f172a] border border-gray-700"
 
 <>
 
+{/* UPCOMING */}
+
+<div className="max-w-5xl mx-auto mb-10">
+
+<div className="bg-gradient-to-r from-gray-600 via-gray-500 to-gray-400 text-center py-3 rounded-xl mb-5 font-bold">
+⏳ UPCOMING RESULT
+</div>
+
+{upcomingMarkets.length === 0 ? (
+
+<div className="text-center py-8 bg-[#111827] rounded-lg border border-gray-700 text-gray-400 text-lg">
+✅ All Market Results Declared
+
+<br/>
+No Upcoming Results
+</div>
+
+) : (
+
+upcomingMarkets.map((m,i)=>(
+<MarketCard
+key={i}
+market={m}
+fetchChart={fetchChart}
+blink={blinkMarkets[m.marketName]}
+/>
+))
+
+)}
+
+</div>
+
 {/* LIVE */}
 
 <div className="max-w-5xl mx-auto mb-10">
 
 <div className="bg-gradient-to-r from-red-600 via-orange-500 to-yellow-500 text-center py-3 rounded-xl mb-5 font-bold animate-pulse">
-🔴 LIVE / UPCOMING RESULT
+🔴 LIVE RESULT
 </div>
 
 {liveMarkets.map((m,i)=>(
@@ -203,6 +251,10 @@ blink={blinkMarkets[m.marketName]}
 
 <div className="bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600 text-center py-3 rounded-xl mb-5 font-bold">
 📁 PUBLISHED RESULT
+</div>
+
+<div className="text-center text-gray-400 text-sm mb-4">
+Last Updated: {lastUpdated}
 </div>
 
 {publishedMarkets.map((m,i)=>(
@@ -340,7 +392,37 @@ function MarketCard({ market, fetchChart, blink }) {
 
 const result = market.marketResult || "";
 const parts = result.split("-");
-const isLive = parts.length < 3;
+const isUpcoming = !result || result === "" || result.includes("Loading")
+const isLive = parts.length === 2
+const isPublished = parts.length === 3
+
+const getResultTime = () => {
+
+if(!market.marketTime) return ""
+
+const parts = market.marketTime.split("-")
+
+return parts[1]?.trim() || parts[0]?.trim()
+
+}
+
+const today = new Date().toLocaleDateString("en-IN", {
+day: "2-digit",
+month: "2-digit",
+year: "numeric"
+})
+
+const lastUpdated = `${today} ${getResultTime()}`
+
+const getUpcomingTime = () => {
+
+if(!market.marketTime) return ""
+
+const parts = market.marketTime.split("-")
+
+return parts[1]?.trim()
+
+}
 
 return (
 
@@ -371,12 +453,14 @@ Panel
 
 <span
 className={`absolute right-4 top-1/2 -translate-y-1/2 text-xs font-semibold px-3 py-1 rounded-full ${
-isLive
+isUpcoming
+? "bg-gray-500"
+: isLive
 ? "bg-red-600 animate-pulse"
 : "bg-green-600"
 }`}
 >
-{isLive ? "LIVE / UPCOMING" : "PUBLISHED"}
+{isUpcoming ? "UPCOMING" : isLive ? "LIVE" : "PUBLISHED"}
 </span>
 
 </div>
@@ -408,10 +492,37 @@ blink ? "animate-pulse text-yellow-400" : "text-white"
 </div>
 )}
 
+{isLive && (
+<div className="text-xs text-yellow-400 mt-1">
+Upcoming Result: {getUpcomingTime()}
+</div>
+)}
+
+{isLive && (
+<div className="mt-3">
+<button
+onClick={() => window.location.reload()}
+className="px-4 py-1 text-[10px] bg-yellow-500 hover:bg-yellow-100 text-black rounded-md font-semibold"
+>
+ Refresh
+</button>
+</div>
+)}
+
+{isPublished && (
+<div className="text-xs text-gray-400 mt-2">
+Last Updated: {lastUpdated}
+</div>
+)}
+
 </>
 )}
 
 </div>
+
+
+
+
 
 
 </div>
