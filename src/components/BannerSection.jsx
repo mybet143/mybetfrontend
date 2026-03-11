@@ -167,7 +167,7 @@ return ( <div className="relative w-full  overflow-hidden">
     {/* LEFT CONTENT */}
     <div className="max-w-xl text-center lg:text-left ">
 
-      <h1 className="text-white text-4xl md:text-6xl font-bold leading-tight">
+      <h1 className="text-white text-4xl md:text-5xl font-bold leading-tight">
         <span className="text-gray-200 block mb-2">
           Welcome to MyBet
         </span>
@@ -247,7 +247,7 @@ return ( <div className="relative w-full  overflow-hidden">
 
           <div className="h-8 w-[2px] bg-white/50"></div>
 
-          <span className="text-white text-lg font-semibold tracking-wide max-md:text-sm">
+          <span className="text-white text-sm font-semibold tracking-wide max-md:text-sm">
             Download App Now
           </span>
 

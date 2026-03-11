@@ -14,16 +14,19 @@ const logos = [
 
 return (
 
-<section className="relative overflow-hidden py-12 bg-[#020617] max-md:py-8">
-
+<section className="relative overflow-hidden py-14 bg-gradient-to-b from-[#020617] via-[#020617] to-[#020c24] max-md:py-5">
 {/* TITLE */}
-<div className="text-center mb-10">
+<div className="text-center mb-6">
 
-<h2 className="text-white text-2xl md:text-3xl font-semibold">
+<h2 className="text-white text-xl md:text-2xl font-bold tracking-wide">
 Trusted Payment Partner
 </h2>
 
-<div className="h-[3px] w-32 mx-auto mt-3 bg-gradient-to-r from-yellow-400 via-yellow-500 to-transparent rounded-full"></div>
+<div className="h-[3px] w-40 mx-auto mt-3 bg-gradient-to-r from-yellow-400 via-yellow-500 to-transparent rounded-full"></div>
+
+<p className="text-gray-400 text-sm mt-3">
+Secure payments powered by leading partners
+</p>
 
 </div>
 
@@ -37,25 +40,28 @@ Trusted Payment Partner
 
 <div
 key={index}
-className="flex items-center justify-center mx-10 shrink-0 max-md:mx-4"
+className="flex items-center justify-center mx-6 shrink-0 max-md:mx-3"
 >
 
-{/* DARK CARD */}
+{/* CARD */}
 
-<div className="flex items-center justify-center
-h-20 w-40
-rounded-xl
-bg-[#eeeeee]
-border border-black/75
-shadow-md
+<div
+className="flex items-center justify-center
+h-16 w-36
+rounded-lg
+bg-white
+border border-white/10
+shadow-lg
 transition duration-300
 hover:border-yellow-400/40
 hover:shadow-yellow-500/20
-hover:scale-105 max-md:w-25 max-md:h-[4rem]">
+hover:scale-110
+max-md:w-24 max-md:h-[3rem]"
+>
 
 <img
 src={logo}
-className="h-10 w-auto opacity-80 hover:opacity-100 transition px-2 max-md:h-8"
+className="h-8 w-auto opacity-90 hover:opacity-100 transition px-3 max-md:h-6"
 />
 
 </div>
@@ -72,7 +78,7 @@ className="h-10 w-auto opacity-80 hover:opacity-100 transition px-2 max-md:h-8"
 .marquee-track{
 display:flex;
 width:max-content;
-animation: marquee 20s linear infinite;
+animation: marquee 22s linear infinite;
 }
 
 @keyframes marquee{
@@ -89,17 +95,3 @@ transform: translateX(-50%);
 
 );
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-

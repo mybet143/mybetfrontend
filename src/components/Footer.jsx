@@ -101,24 +101,45 @@ Customer support
       <div className="flex flex-col gap-4">
 
         {/* TELEGRAM */}
-        <a
-          href="https://t.me/mybet_Team"
-          target="_blank"
-          className="flex items-center justify-center gap-2 border border-blue-500/40 bg-blue-500/10 rounded-lg py-3 hover:bg-blue-500/20 transition"
-        >
-          <FaTelegramPlane size={18} />
-          Join Telegram
-        </a>
+<a
+  href="https://t.me/mybet_Team"
+  target="_blank"
+  rel="noopener noreferrer"
+  className="flex items-center gap-3 border border-blue-500/40 bg-blue-500/10 rounded-lg p-3 hover:bg-blue-500/20 transition"
+>
+  <FaTelegramPlane size={20} className="text-blue-400"/>
+
+  <div className="flex flex-col">
+    <span className="text-white text-sm font-medium">
+      Telegram Support
+    </span>
+
+    <span className="text-gray-400 text-xs">
+      @mybet_Team
+    </span>
+  </div>
+
+</a>
 
         {/* WHATSAPP */}
-        <a
-          href="https://wa.me/919690325764"
-          target="_blank"
-          className="flex items-center justify-center gap-2 border border-green-500/40 bg-green-500/10 rounded-lg py-3 hover:bg-green-500/20 transition"
-        >
-          <FaWhatsapp size={18} />
-          Join WhatsApp
-        </a>
+    <a
+href="https://wa.me/919690325764?text=Hello%20MyBet%20Support"
+  target="_blank"
+  className="flex items-center gap-3 border border-green-500/40 bg-green-500/10 rounded-lg p-3 hover:bg-green-500/20 transition"
+>
+  <FaWhatsapp size={20} className="text-green-400"/>
+
+  <div className="flex flex-col">
+    <span className="text-white text-sm font-medium">
+      WhatsApp Support
+    </span>
+
+    <span className="text-gray-400 text-xs">
+      +91 96903 25764
+    </span>
+  </div>
+
+</a>
 
       </div>
 
@@ -159,42 +180,12 @@ Customer support
 
 
 
-<div className="mt-8 border-t border-white/10 pt-10 text-center">
-
-  <h4 className="text-white font-semibold mb-5">
-    Security & Certificates
-  </h4>
-
-  <div className="flex justify-center gap-6 flex-wrap">
-
-    {/* DigiCert */}
-    <div className="bg-[#0b1220] border border-white/10 px-5 py-3 rounded-lg hover:border-yellow-400 transition flex items-center gap-3">
-      <FaShieldAlt className="text-yellow-400 text-lg"/>
-      DigiCert Secure
-    </div>
-
-    {/* Gaming Certified */}
-    <div className="bg-[#0b1220] border border-white/10 px-5 py-3 rounded-lg hover:border-yellow-400 transition flex items-center gap-3">
-      <FaShieldAlt className="text-green-400 text-lg"/>
-      Gaming Certified
-    </div>
-
-    {/* SSL */}
-    <div className="bg-[#0b1220] border border-white/10 px-5 py-3 rounded-lg hover:border-yellow-400 transition flex items-center gap-3">
-      <FaLock className="text-blue-400 text-lg"/>
-      SSL Secured
-    </div>
-
-  </div>
-
-</div>
-
   {/* DISCLAIMER */}
 
 <div className="mt-12 border-t border-white/10 pt-8 text-gray-400 text-sm leading-7">
 
 <h4 className="text-white font-semibold mb-4">
-Footer Disclaimer – MyBet Satta Matka APP
+Disclaimer – MyBet Satta Matka APP
 </h4>
 
 <p className="mb-4">

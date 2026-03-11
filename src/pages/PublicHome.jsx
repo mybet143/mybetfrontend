@@ -2,10 +2,11 @@ import { useEffect, useState, useRef } from "react";
 import ChartSection from "../components/ChartSection";
 import JodiChart from "../components/JodiChart";
 import PanelChart from "../components/PanelChart";
+import SupportWidget from "../components/SupportWidget";
 
-const API = import.meta.env.VITE_API_URL;
+// const API = import.meta.env.VITE_API_URL;
 
-// const API = "http://localhost:8000";
+const API = "http://localhost:8000";
 
 
 function getCurrentTime() {
@@ -202,32 +203,26 @@ return(
 
 {/* UPCOMING */}
 
+{upcomingMarkets.length > 0 && (
+
 <div className="max-w-5xl mx-auto mb-10">
 
 <div className="bg-gradient-to-r from-gray-600 via-gray-500 to-gray-400 text-center py-3 rounded-xl mb-5 font-bold animate-pulse">
 ⏳ PENDING RESULT
 </div>
 
-{upcomingMarkets.length === 0 ? (
-
-<div className="text-center py-8 bg-[#111827] rounded-lg border border-gray-700 text-gray-400 text-lg animate-pulse">
-  No Pending Results
-</div>
-
-) : (
-
-upcomingMarkets.map((m,i)=>(
+{upcomingMarkets.map((m,i)=>(
 <MarketCard
 key={i}
 market={m}
 fetchChart={fetchChart}
 blink={blinkMarkets[m.marketName]}
 />
-))
-
-)}
+))}
 
 </div>
+
+)}
 
 {/* LIVE */}
 
@@ -257,9 +252,7 @@ blink={blinkMarkets[m.marketName]}
 📁 PUBLISHED RESULT
 </div>
 
-<div className="text-center text-gray-400 text-sm mb-4">
-Last Updated: {lastUpdated}
-</div>
+
 
 {publishedMarkets.map((m,i)=>(
 <MarketCard
@@ -434,8 +427,7 @@ return (
 <div className="relative bg-[#111827] border border-gray-700 rounded-lg mb-4 overflow-hidden shadow-lg hover:shadow-yellow-500/20 transition">
 
 {/* JODI BUTTON */}
-{/* JODI BUTTON */}
-{!isLive && (
+{isPublished && (
 <div
 onClick={async () => {
   setBtnLoading("jodi")
@@ -457,8 +449,7 @@ ${btnLoading ? "bg-gray-600 cursor-not-allowed" : "bg-red-600 cursor-pointer"}
 )}
 
 {/* PANEL BUTTON */}
-{/* PANEL BUTTON */}
-{!isLive && (
+{isPublished && (
 <div
 onClick={async () => {
   setBtnLoading("panel")
@@ -477,18 +468,18 @@ className="absolute right-2 top-1/2 -translate-y-1/2 bg-red-600 cursor-pointer t
 </div>
 )}
 {/* HEADER */}
-<div className="relative px-4 py-4 bg-[#1f2937]">
+<div className="relative px-4 py-4 bg-[#1f2937] ">
 
 <span
-className={`absolute right-4 top-1/2 -translate-y-1/2 text-xs font-semibold px-3 py-1 rounded-full ${
+className={`absolute right-4 top-1/2 -translate-y-1/2 text-xs max-md:text-[8px] max-md:px-2  max-md:right-1 font-semibold px-3 py-1 rounded-full ${
 isUpcoming
-? "bg-gray-500"
+? "bg-gray-500 animate-pulse"
 : isLive
-? "bg-red-600 animate-pulse"
+? "bg-red-500 shadow-lg shadow-red-500/40 animate-pulse"
 : "bg-green-600"
 }`}
 >
-{isUpcoming ? "UPCOMING" : isLive ? "LIVE" : "PUBLISHED"}
+{isUpcoming ? "PENDING" : isLive ? "LIVE" : "PUBLISHED"}
 </span>
 
 </div>
@@ -507,7 +498,7 @@ isUpcoming
 ) : (
 <>
 <div
-className={`font-bold text-3xl tracking-widest ${
+className={`font-bold text-2xl tracking-widest ${
 blink ? "animate-pulse text-yellow-400" : "text-white"
 }`}
 >
@@ -520,11 +511,15 @@ blink ? "animate-pulse text-yellow-400" : "text-white"
 </div>
 )}
 
-{isLive && (
+
+{/* {isLive && (
 <div className="text-xs text-yellow-400 mt-1">
 Upcoming Result: {getUpcomingTime()}
 </div>
-)}
+)} */}
+
+
+
 
 {isLive && (
 <div className="mt-3">
@@ -537,11 +532,7 @@ className="px-4 py-1 text-[10px] bg-yellow-500 hover:bg-yellow-100 text-black ro
 </div>
 )}
 
-{isPublished && (
-<div className="text-xs text-gray-400 mt-2">
-Last Updated: {lastUpdated}
-</div>
-)}
+
 
 </>
 )}
@@ -552,7 +543,7 @@ Last Updated: {lastUpdated}
 
 
 
-
+<SupportWidget/>
 </div>
 
 

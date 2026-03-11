@@ -46,7 +46,7 @@ const otherJodi = [
 const Row = ({name,type}) => (
 <div
 onClick={() => onOpenChart(name,type.includes("Panel") ? "panel":"jodi")}
-className="bg-[#111827] text-yellow-500 font-semibold text-center py-3 cursor-pointer border-2 border-[#1f2937] hover:bg-gray-300 transition" id="chart"
+className="bg-[#111827] text-yellow-500 font-semibold text-center py-3 cursor-pointer border-2 border-[#1f2937] hover:bg-[#27324a] transition" id="chart"
 >
 {name} {type}
 </div>
