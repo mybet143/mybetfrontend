@@ -7,7 +7,7 @@ const Footer = () => {
 return ( <footer className="bg-[#020617] text-gray-300  pb-10 px-6 border-t border-white/10 md:pt-8">
 
 
-  <div className="max-w-7xl mx-auto grid md:grid-cols-4 gap-12">
+  <div className="max-w-7xl mx-auto grid md:grid-cols-5 gap-12">
 
     {/* BRAND */}
     <div>
@@ -102,7 +102,7 @@ Customer support
 
         {/* TELEGRAM */}
 <a
-  href="https://t.me/mybet_Team"
+  href="https://t.me/mybet_bot"
   target="_blank"
   rel="noopener noreferrer"
   className="flex items-center gap-3 border border-blue-500/40 bg-blue-500/10 rounded-lg p-3 hover:bg-blue-500/20 transition"
@@ -144,40 +144,51 @@ href="https://wa.me/919690325764?text=Hello%20MyBet%20Support"
       </div>
 
       {/* SOCIAL ICONS */}
-      <div className="flex gap-4 mt-6">
-
-        <a
-          href="https://facebook.com"
-          target="_blank"
-          className="bg-white/5 border border-white/10 p-3 rounded-lg hover:border-yellow-400 transition"
-        >
-          <FaFacebook />
-        </a>
-
-        <a
-          href="https://instagram.com"
-          target="_blank"
-          className="bg-white/5 border border-white/10 p-3 rounded-lg hover:border-yellow-400 transition"
-        >
-          <FaInstagram />
-        </a>
-
-        <a
-          href="https://youtube.com"
-          target="_blank"
-          className="bg-white/5 border border-white/10 p-3 rounded-lg hover:border-yellow-400 transition"
-        >
-          <FaYoutube />
-        </a>
-
-      </div>
+  
 
     </div>
+
+     <div className="flex gap-4 mt-6">
+
+  <a
+    href="https://facebook.com"
+    target="_blank"
+    className="bg-white/5 border border-white/10 p-3 rounded-lg hover:border-yellow-400 transition"
+  >
+    <FaFacebook />
+  </a>
+
+  <a
+    href="https://instagram.com"
+    target="_blank"
+    className="bg-white/5 border border-white/10 p-3 rounded-lg hover:border-yellow-400 transition"
+  >
+    <FaInstagram />
+  </a>
+
+  <a
+    href="https://youtube.com"
+    target="_blank"
+    className="bg-white/5 border border-white/10 p-3 rounded-lg hover:border-yellow-400 transition"
+  >
+    <FaYoutube />
+  </a>
+
+  <a
+    href="https://t.me/mybet_Team"
+    target="_blank"
+    className="bg-white/5 border border-white/10 p-3 rounded-lg hover:border-yellow-400 transition"
+  >
+    <FaTelegramPlane />
+  </a>
+
+</div>
 
   </div>
 
   {/* SECURITY BADGES */}
-
+  
+  
 
 
   {/* DISCLAIMER */}

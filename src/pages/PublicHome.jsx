@@ -39,15 +39,32 @@ const previousResults = useRef({})
 const [blinkMarkets,setBlinkMarkets] = useState({})
 
 
+/* ================= INSTANT CACHE LOAD ================= */
+
+useEffect(()=>{
+
+const cached = localStorage.getItem("markets")
+
+if(cached){
+
+const parsed = JSON.parse(cached)
+
+setMarkets(parsed)
+setFilteredMarkets(parsed)
+setLoading(false)
+
+}
+
+},[])
+
+
 /* ================= FETCH MARKETS ================= */
 
 const fetchMarket = async ()=>{
 
 try{
 
-const res = await fetch(`${API}/api/matka`,{
-cache:"no-store"
-})
+const res = await fetch(`${API}/api/matka`)
 const data = await res.json()
 
 if(data.success){
@@ -79,7 +96,7 @@ setBlinkMarkets(newBlink)
 
 setMarkets(data.data)
 setFilteredMarkets(data.data)
-
+localStorage.setItem("markets",JSON.stringify(data.data))
 setTimeout(()=>setBlinkMarkets({}),4000)
 
 }
