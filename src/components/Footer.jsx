@@ -7,7 +7,7 @@ const Footer = () => {
 return ( <footer className="bg-[#020617] text-gray-300  pb-10 px-6 border-t border-white/10 md:pt-8">
 
 
-  <div className="max-w-7xl mx-auto grid lg:grid-cols-5 gap-12 max-lg:grid-cols-3 max-md:grid-cols-1">
+  <div className="max-w-7xl mx-auto grid lg:grid-cols-5 gap-12 max-lg:grid-cols-3 max-md:grid-cols-1 max-md:gap-[18px]">
 
     {/* BRAND */}
     <div>
@@ -32,9 +32,9 @@ return ( <footer className="bg-[#020617] text-gray-300  pb-10 px-6 border-t bord
     </div>
 
     {/* QUICK LINKS */}
-    <div>
+    <div className="max-md:mb-4">
 
-      <h3 className="text-lg font-semibold text-white mb-6">
+      <h3 className="text-lg font-semibold text-white mb-6 max-md:mb-2">
        About Us
       </h3>
 
@@ -59,9 +59,9 @@ return ( <footer className="bg-[#020617] text-gray-300  pb-10 px-6 border-t bord
     </div>
 
     {/* LEGAL */}
-    <div>
+    <div className="max-md:mb-4">
 
-      <h3 className="text-lg font-semibold text-white mb-6">
+      <h3 className="text-lg font-semibold text-white mb-6 max-md:mb-2">
        Quick Links
       </h3>
 <ul className="space-y-3 text-sm">
@@ -89,9 +89,9 @@ return ( <footer className="bg-[#020617] text-gray-300  pb-10 px-6 border-t bord
     </div>
 
     {/* COMMUNITY */}
-    <div>
+    <div className="max-md:mb-4">
 
-      <h3 className="text-white font-semibold mb-6 text-lg">
+      <h3 className="text-white font-semibold mb-6 text-lg max-md:mb-2">
 Customer support 
 
       </h3>
@@ -147,9 +147,9 @@ href="https://wa.me/919690325764?text=Hello%20MyBet%20Support"
     </div>
 {/* COMMUNITY */}
 
-<div className="mt-">
+    <div className="max-md:mb-4">
 
-<h3 className="text-lg font-semibold text-white mb-4">
+<h3 className="text-lg font-semibold text-white mb-4 max-md:mb-2">
 Join Our Community
 </h3>
 
@@ -166,7 +166,7 @@ Join Telegram
 
 {/* SOCIAL ICONS */}
 
-<div className="flex gap-5 mt-6">
+<div className="flex gap-5 mt-6 max-md:mt-3">
 
 <a
 href="https://facebook.com"
