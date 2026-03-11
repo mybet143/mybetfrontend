@@ -204,7 +204,7 @@ className="bg-white/5 border border-white/10 p-3 rounded-lg hover:border-yellow-
 
   {/* DISCLAIMER */}
 
-<div className="mt-12 border-t border-white/10 pt-8 text-gray-400 text-sm leading-7 max-lg:mt-6">
+<div className="mt-12 max-w-7xl mx-auto border-t border-white/10 pt-8 text-gray-400 text-sm leading-7 max-lg:mt-6">
 
 <h4 className="text-white font-semibold mb-4">
 Disclaimer – MyBet Satta Matka APP
