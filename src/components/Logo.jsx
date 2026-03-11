@@ -25,7 +25,7 @@ Trusted Payment Partner
 <div className="h-[3px] w-40 mx-auto mt-3 bg-gradient-to-r from-yellow-400 via-yellow-500 to-transparent rounded-full"></div>
 
 <p className="text-gray-400 text-sm mt-3">
-Secure payments powered by leading partners
+Secure Payments Powered by Leading Partners
 </p>
 
 </div>

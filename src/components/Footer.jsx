@@ -100,7 +100,7 @@ Customer support
 
         {/* TELEGRAM */}
 <a
-  href="https://t.me/mybet_bot"
+  href="https://t.me/mybet_app"
   target="_blank"
   rel="noopener noreferrer"
   className="flex items-center gap-3 border border-blue-500/40 bg-blue-500/10 rounded-lg p-3 hover:bg-blue-500/20 transition max-md:max-w-[250px]"
@@ -113,7 +113,7 @@ Customer support
     </span>
 
     <span className="text-gray-400 text-xs">
-      @mybet_Team
+      mybet_support
     </span>
   </div>
 
@@ -150,7 +150,7 @@ href="https://wa.me/919690325764?text=Hello%20MyBet%20Support"
     <div className="max-md:mb-4">
 
 <h3 className="text-lg font-semibold text-white mb-4 max-md:mb-2">
-Join Our Community
+Join our Channel
 </h3>
 
 {/* TELEGRAM BUTTON */}
@@ -162,6 +162,7 @@ target="_blank"
 >
 <FaTelegramPlane className="text-2xl text-blue-400"/>
 Join Telegram
+
 </a>
 
 {/* SOCIAL ICONS */}
