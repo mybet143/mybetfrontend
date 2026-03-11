@@ -162,13 +162,13 @@ return ( <div className="relative w-full  overflow-hidden">
   </div>
 
   {/* MAIN CONTAINER */}
-  <div className="relative z-10 max-w-7xl mx-auto px-6 min-h-[80vh] flex flex-col lg:flex-row items-center justify-between pt-32  lg:pt-12">
+  <div className="relative z-10 max-w-7xl mx-auto px-6 min-h-[80vh] flex flex-col lg:flex-row items-center justify-between pt-32  lg:pt-12 max-sm:px-3">
 
     {/* LEFT CONTENT */}
     <div className="max-w-xl text-center lg:text-left ">
 
       <h1 className="text-white text-4xl md:text-5xl font-bold leading-tight">
-        <span className="text-gray-200 block mb-2">
+        <span className="text-gray-200 block mb-2 max-sm:mb-0">
           Welcome to MyBet
         </span>
 
@@ -199,7 +199,7 @@ return ( <div className="relative w-full  overflow-hidden">
       </div>
 
       {/* DOWNLOAD BUTTON */}
-   <div className="flex justify-start mt-8 max-lg:justify-center">
+   <div className="flex justify-start mt-8 max-lg:justify-center max-sm:mt-4">
       <a
         href="#"
         className="group relative inline-flex items-center overflow-hidden rounded-xl 
@@ -257,7 +257,7 @@ return ( <div className="relative w-full  overflow-hidden">
     </div>
 
     {/* RIGHT IMAGE */}
-    <div className="mt-10 lg:mt-0 flex justify-center relative">
+    <div className="mt-3  flex justify-center relative ">
 
       {/* GLOW */}
       <div className="absolute w-[350px] h-[350px] bg-yellow-500/20 blur-[120px] rounded-full"></div>
@@ -265,7 +265,7 @@ return ( <div className="relative w-full  overflow-hidden">
       <img
         src="/main7.png"
         alt="MyBet Model"
-        className="relative w-[320px] md:w-[380px] lg:w-[420px]"
+        className="relative w-[260px] md:w-[340px] lg:w-[380px]"
       />
 
     </div>

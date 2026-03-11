@@ -62,7 +62,7 @@ Customer Support
 {/* TELEGRAM */}
 
 <a
-href={`https://t.me/${telegramId}`}
+href={`https://t.me/mybet_bot/${telegramId}`}
 target="_blank"
 rel="noopener noreferrer"
 className="flex items-center gap-3 border border-blue-500/40 bg-blue-500/10 rounded-lg p-3 hover:bg-blue-500/20 transition mb-3"

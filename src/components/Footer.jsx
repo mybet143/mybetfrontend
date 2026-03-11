@@ -7,7 +7,7 @@ const Footer = () => {
 return ( <footer className="bg-[#020617] text-gray-300  pb-10 px-6 border-t border-white/10 md:pt-8">
 
 
-  <div className="max-w-7xl mx-auto grid md:grid-cols-5 gap-12">
+  <div className="max-w-7xl mx-auto grid lg:grid-cols-5 gap-12 max-lg:grid-cols-3 max-md:grid-cols-1">
 
     {/* BRAND */}
     <div>
@@ -15,12 +15,10 @@ return ( <footer className="bg-[#020617] text-gray-300  pb-10 px-6 border-t bord
       <img
         src="/mybet.png"
         alt="MyBet Logo"
-        className="w-44 mb-4 relative right-[2.5rem]"
+        className="w-32 mb- relative right-[1rem]"
       />
 
-      <h1 className="text-white text-xl font-bold mb-3 ">
-        My Bet
-      </h1>
+      
 
       <p className="text-sm leading-6 mb-4 text-gray-400">
         Trusted Since 2012. AI-based Satta Matka predictions,
@@ -105,7 +103,7 @@ Customer support
   href="https://t.me/mybet_bot"
   target="_blank"
   rel="noopener noreferrer"
-  className="flex items-center gap-3 border border-blue-500/40 bg-blue-500/10 rounded-lg p-3 hover:bg-blue-500/20 transition"
+  className="flex items-center gap-3 border border-blue-500/40 bg-blue-500/10 rounded-lg p-3 hover:bg-blue-500/20 transition max-md:max-w-[250px]"
 >
   <FaTelegramPlane size={20} className="text-blue-400"/>
 
@@ -125,7 +123,7 @@ Customer support
     <a
 href="https://wa.me/919690325764?text=Hello%20MyBet%20Support"
   target="_blank"
-  className="flex items-center gap-3 border border-green-500/40 bg-green-500/10 rounded-lg p-3 hover:bg-green-500/20 transition"
+  className="flex items-center gap-3 border border-green-500/40 bg-green-500/10 rounded-lg p-3 hover:bg-green-500/20 transition max-md:max-w-[250px]"
 >
   <FaWhatsapp size={20} className="text-green-400"/>
 
@@ -147,43 +145,56 @@ href="https://wa.me/919690325764?text=Hello%20MyBet%20Support"
   
 
     </div>
+{/* COMMUNITY */}
 
-     <div className="flex gap-4 mt-6">
+<div className="mt-">
 
-  <a
-    href="https://facebook.com"
-    target="_blank"
-    className="bg-white/5 border border-white/10 p-3 rounded-lg hover:border-yellow-400 transition"
-  >
-    <FaFacebook />
-  </a>
+<h3 className="text-lg font-semibold text-white mb-4">
+Join Our Community
+</h3>
 
-  <a
-    href="https://instagram.com"
-    target="_blank"
-    className="bg-white/5 border border-white/10 p-3 rounded-lg hover:border-yellow-400 transition"
-  >
-    <FaInstagram />
-  </a>
+{/* TELEGRAM BUTTON */}
 
-  <a
-    href="https://youtube.com"
-    target="_blank"
-    className="bg-white/5 border border-white/10 p-3 rounded-lg hover:border-yellow-400 transition"
-  >
-    <FaYoutube />
-  </a>
+<a
+href="https://t.me/mybet_Team"
+target="_blank"
+  className="flex items-center gap-3 border  border-blue-500/40 bg-blue-500/10 rounded-lg p-3 hover:bg-blue-500/20 transition max-md:max-w-[250px]"
+>
+<FaTelegramPlane className="text-2xl text-blue-400"/>
+Join Telegram
+</a>
 
-  <a
-    href="https://t.me/mybet_Team"
-    target="_blank"
-    className="bg-white/5 border border-white/10 p-3 rounded-lg hover:border-yellow-400 transition"
-  >
-    <FaTelegramPlane />
-  </a>
+{/* SOCIAL ICONS */}
+
+<div className="flex gap-5 mt-6">
+
+<a
+href="https://facebook.com"
+target="_blank"
+className="bg-white/5 border border-white/10 p-3 rounded-lg hover:border-yellow-400 transition"
+>
+<FaFacebook size={20}/>
+</a>
+
+<a
+href="https://instagram.com"
+target="_blank"
+className="bg-white/5 border border-white/10 p-3 rounded-lg hover:border-yellow-400 transition"
+>
+<FaInstagram size={20}/>
+</a>
+
+<a
+href="https://youtube.com"
+target="_blank"
+className="bg-white/5 border border-white/10 p-3 rounded-lg hover:border-yellow-400 transition"
+>
+<FaYoutube size={20}/>
+</a>
 
 </div>
 
+</div>
   </div>
 
   {/* SECURITY BADGES */}
@@ -193,7 +204,7 @@ href="https://wa.me/919690325764?text=Hello%20MyBet%20Support"
 
   {/* DISCLAIMER */}
 
-<div className="mt-12 border-t border-white/10 pt-8 text-gray-400 text-sm leading-7">
+<div className="mt-12 border-t border-white/10 pt-8 text-gray-400 text-sm leading-7 max-lg:mt-6">
 
 <h4 className="text-white font-semibold mb-4">
 Disclaimer – MyBet Satta Matka APP
