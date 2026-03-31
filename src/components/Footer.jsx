@@ -113,7 +113,7 @@ Customer support
     </span>
 
     <span className="text-gray-400 text-xs">
-      mybet_support
+     @mybet_App
     </span>
   </div>
 
@@ -121,7 +121,7 @@ Customer support
 
         {/* WHATSAPP */}
     <a
-href="https://wa.me/919690325764?text=Hello%20MyBet%20Support"
+href="https://wa.me/917404726931?text=Hello%20MyBet%20Support"
   target="_blank"
   className="flex items-center gap-3 border border-green-500/40 bg-green-500/10 rounded-lg p-3 hover:bg-green-500/20 transition max-md:max-w-[250px]"
 >
@@ -133,7 +133,7 @@ href="https://wa.me/919690325764?text=Hello%20MyBet%20Support"
     </span>
 
     <span className="text-gray-400 text-xs">
-      +91 96903 25764
+      +91 74047 26931
     </span>
   </div>
 
@@ -170,7 +170,7 @@ Join Telegram
 <div className="flex gap-5 mt-6 max-md:mt-3">
 
 <a
-href="https://facebook.com"
+href="https://www.facebook.com/profile.php?id=61587851866406"
 target="_blank"
 className="bg-white/5 border border-white/10 p-3 rounded-lg hover:border-yellow-400 transition"
 >
@@ -178,7 +178,7 @@ className="bg-white/5 border border-white/10 p-3 rounded-lg hover:border-yellow-
 </a>
 
 <a
-href="https://instagram.com"
+href="https://www.instagram.com/mybet_app/"
 target="_blank"
 className="bg-white/5 border border-white/10 p-3 rounded-lg hover:border-yellow-400 transition"
 >
@@ -186,7 +186,7 @@ className="bg-white/5 border border-white/10 p-3 rounded-lg hover:border-yellow-
 </a>
 
 <a
-href="https://youtube.com"
+href="https://www.youtube.com/@Mybet_App"
 target="_blank"
 className="bg-white/5 border border-white/10 p-3 rounded-lg hover:border-yellow-400 transition"
 >

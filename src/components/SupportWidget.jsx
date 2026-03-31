@@ -9,7 +9,7 @@ const popupRef = useRef(null)
 
 /* ONLY ID / NUMBER STORE KARO */
 const telegramId = "mybet_Team"
-const whatsappNumber = "919690325764"
+const whatsappNumber = "917404726931"
 
 /* CLOSE ON OUTSIDE CLICK */
 
@@ -76,7 +76,7 @@ Telegram Support
 </span>
 
 <span className="text-gray-400 text-xs">
-{telegramId}
+@mybet_App
 </span>
 </div>
 

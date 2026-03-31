@@ -1,6 +1,8 @@
 "use client";
 
 import { useNavigate } from "react-router-dom";
+import Footer from "./Footer";
+import { Link } from "react-router-dom";
 
 export default function PrivacyPolicy() {
 
@@ -8,13 +10,15 @@ const navigate = useNavigate();
 
 return (
 
-<div className="bg-[#020617] text-white min-h-screen">
+<div className="bg-[#00000] text-white min-h-screen">
 
 {/* HEADER */}
-<div className="border-b border-white/10 bg-black/40 backdrop-blur sticky top-0 z-50">
+<div className="border-b border-white/10 bg-black sticky top-0 z-50">
 
 <div className="max-w-6xl mx-auto flex items-center justify-between px-6 py-4">
-
+<Link to="/">
+    <img src="/mybet.png" alt="logo" className="w-14 h-12 cursor-pointer" />
+  </Link>
 <button
 onClick={()=>navigate(-1)}
 className="bg-yellow-500 hover:bg-yellow-400 text-black px-4 py-2 rounded-lg font-semibold"
@@ -22,9 +26,7 @@ className="bg-yellow-500 hover:bg-yellow-400 text-black px-4 py-2 rounded-lg fon
 ← Back
 </button>
 
-<h1 className="text-yellow-400 font-semibold">
-MyBet Privacy Policy
-</h1>
+
 
 </div>
 
@@ -32,7 +34,7 @@ MyBet Privacy Policy
 
 
 {/* CONTENT */}
-<div className="max-w-5xl mx-auto px-6 py-16 space-y-12">
+<div className="max-w-5xl mx-auto px-6 py-5 space-y-6 text-center">
 
 <h1 className="text-4xl font-bold text-yellow-400">
 Privacy Policy – MyBet Satta Matka App
@@ -46,7 +48,7 @@ At MyBet, Satta Matka App we respect and protect the privacy of our users. This 
 {/* SECTION 1 */}
 <div>
 
-<h2 className="text-2xl font-semibold text-yellow-400 mb-4">
+<h2 className="text-2xl font-semibold text-yellow-400 mb-4 ">
 1. Information We Collect
 </h2>
 
@@ -56,7 +58,7 @@ When you use MyBet, we may collect the following types of information:
 
 <p className="font-semibold">Personal Information</p>
 
-<ul className="list-disc ml-6 text-gray-300 space-y-1">
+<ul className="list-disc ml-6 text-gray-300 space-y-1 list-none pl-0">
 <li>Name</li>
 <li>Mobile number</li>
 <li>Email address</li>
@@ -65,7 +67,7 @@ When you use MyBet, we may collect the following types of information:
 
 <p className="font-semibold mt-6">Technical Information</p>
 
-<ul className="list-disc ml-6 text-gray-300 space-y-1">
+<ul className="list-disc ml-6 text-gray-300 space-y-1 list-none pl-0">
 <li>Device information</li>
 <li>IP address</li>
 <li>App usage data</li>
@@ -74,7 +76,7 @@ When you use MyBet, we may collect the following types of information:
 
 <p className="font-semibold mt-6">Usage Information</p>
 
-<ul className="list-disc ml-6 text-gray-300 space-y-1">
+<ul className="list-disc ml-6 text-gray-300 space-y-1 list-none pl-0">
 <li>Market preferences</li>
 <li>App interaction and activity history</li>
 </ul>
@@ -93,7 +95,7 @@ When you use MyBet, we may collect the following types of information:
 We use collected information to:
 </p>
 
-<ul className="list-disc ml-6 text-gray-300 space-y-2">
+<ul className="list-disc ml-6 text-gray-300 space-y-2 list-none pl-0">
 <li>Provide Satta Matka market updates and services</li>
 <li>Improve app performance and user experience</li>
 <li>Deliver AI-based predictions and analysis reports</li>
@@ -129,7 +131,7 @@ MyBet uses reasonable technical and administrative security measures to protect 
 We do not sell, rent, or trade your personal information to third parties. Information may only be shared:
 </p>
 
-<ul className="list-disc ml-6 text-gray-300 space-y-2">
+<ul className="list-disc ml-6 text-gray-300 space-y-2 list-none pl-0">
 <li>When required by law or legal authorities</li>
 <li>To protect platform security or user safety</li>
 <li>With trusted service providers assisting in app operations (under confidentiality obligations)</li>
@@ -218,6 +220,7 @@ MyBet Satta Matka App – Your privacy and trust are our priority.
 </div>
 
 </div>
+<Footer/>
 
 </div>
 

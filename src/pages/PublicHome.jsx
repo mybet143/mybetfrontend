@@ -3,6 +3,7 @@ import ChartSection from "../components/ChartSection";
 import JodiChart from "../components/JodiChart";
 import PanelChart from "../components/PanelChart";
 import SupportWidget from "../components/SupportWidget";
+import socket from "../../utils/socket"
 
 const API = import.meta.env.VITE_API_URL;
 
@@ -123,6 +124,29 @@ const interval=setInterval(fetchMarket,120000)
 return ()=>clearInterval(interval)
 
 },[])
+
+useEffect(() => {
+
+  socket.on("resultUpdated", (updatedMarket) => {
+
+    setMarkets(prev => {
+
+      const updatedList = prev.map(m =>
+        m.marketName === updatedMarket.marketName
+          ? { ...m, ...updatedMarket }
+          : m
+      )
+
+      setFilteredMarkets(updatedList)
+
+      return updatedList
+    })
+
+  })
+
+  return () => socket.off("resultUpdated")
+
+}, [])
 
 
 /* ================= SEARCH ================= */

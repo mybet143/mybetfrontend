@@ -7,35 +7,40 @@ import MainHome from "./pages/MainHome";
 import AdminBanner from "./pages/AdminBanner";
 import AboutUs from "./components/AboutUs";
 import PrivacyPolicy from "./components/Privacy";
+import AdminResult from "./pages/AdminResult";
 
-
-
+// ✅ IMPORT
+import ScrollToTop from "./components/ScrollToTop";
 
 function App() {
   return (
-    <Routes>
+    <>
+      {/* ✅ YEH ADD KARNA HAI */}
+      <ScrollToTop />
 
-      {/* Public Website */}
-      <Route path="/" element={<MainHome/>} />
+      <Routes>
+        {/* Public Website */}
+        <Route path="/" element={<MainHome />} />
 
-      {/* Admin Login */}
-      <Route path="/admin/login" element={<AdminLogin />} />
+        {/* Admin Login */}
+        <Route path="/admin/login" element={<AdminLogin />} />
 
-      {/* Admin Dashboard (Protected) */}
-      <Route
-        path="/admin/dashboard"
-        element={
-          <ProtectedRoute>
-            <AdminDashboard />
-          </ProtectedRoute>
-        }
-      />
-      <Route path="/admin/banner" element={<AdminBanner />} />
-      <Route path="/about" element={<AboutUs/>}/>
-      <Route path="/privacy" element={<PrivacyPolicy/>}/>
-      
+        {/* Admin Dashboard (Protected) */}
+        <Route
+          path="/admin/dashboard"
+          element={
+            <ProtectedRoute>
+              <AdminDashboard />
+            </ProtectedRoute>
+          }
+        />
 
-    </Routes>
+        <Route path="/admin/result" element={<AdminResult />} />
+        <Route path="/admin/banner" element={<AdminBanner />} />
+        <Route path="/about" element={<AboutUs />} />
+        <Route path="/privacy" element={<PrivacyPolicy />} />
+      </Routes>
+    </>
   );
 }
 

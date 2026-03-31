@@ -14,7 +14,7 @@ const logos = [
 
 return (
 
-<section className="relative overflow-hidden py-14 bg-gradient-to-b from-[#020617] via-[#020617] to-[#020c24] max-md:py-5">
+<section className="relative overflow-hidden py-5 bg-gradient-to-b from-[#020617] via-[#020617] to-[#020c24] max-md:py-5">
 {/* TITLE */}
 <div className="text-center mb-6">
 
